@@ -12,6 +12,7 @@ const humidity = document.querySelector('span.humidity');
 const windSpeed = document.querySelector('span.wind_speed');
 const visibility = document.querySelector('span.visibility');
 const clouds = document.querySelector('span.clouds');
+
 const apiInfo = {
     link: 'https://api.openweathermap.org/data/2.5/weather?q=',
     key: '&appid=2f51fab3f3b49ab338cd23e79fa3166c',
@@ -23,13 +24,12 @@ const getWeatherInfo = () => {
     const apiInfoCity = input.value;
     const apiURL = `${apiInfo.link}${apiInfoCity}${apiInfo.key}${apiInfo.units}${apiInfo.lang}`;
     console.log(apiURL);
+
     axios.get(apiURL).then((response) => {
         console.log(response.data);
-        //-----------------------------
+
         const timestamp = response.data.timezone;
-        console.log(timestamp);
         const timezone = response.data.timezone;
-        console.log(timezone);
         const localTime = new Date(Date.now() + 1000 * timezone - 7200000);
 
         date.textContent = localTime.toLocaleString('pl-PL', {
@@ -40,10 +40,12 @@ const getWeatherInfo = () => {
             hour: '2-digit',
             minute: '2-digit'
         });
-        //----------------------------
+
         cityName.textContent = `${response.data.name}, ${response.data.sys.country}`;
         description.textContent = `${response.data.weather[0].description}`;
         img.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+        img.classList.remove("hidden"); // <- POKAŻ ikonę
+
         visibility.textContent = `${response.data.visibility / 1000} km`;
         feelsLike.textContent = `${Math.round(response.data.main.feels_like)}`;
         pressure.textContent = `${response.data.main.pressure}hPa`;
@@ -56,11 +58,12 @@ const getWeatherInfo = () => {
         errorMsg.textContent = `${error.response.data.cod} - ${error.response.data.message}`;
         [date, cityName, temp, description, feelsLike, humidity, pressure, windSpeed, visibility, clouds].forEach(el => {
             el.textContent = ' ';
-        })
-        img.src = ' ';
+        });
+        img.src = '';
+        img.classList.add("hidden"); 
     }).finally(() => {
         input.value = '';
-    })
+    });
 };
 
 const getWeatherInfoByEnter = (e) => {

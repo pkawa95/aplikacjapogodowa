@@ -18,9 +18,9 @@ body {
 
 header {
     text-align: center;
-    background-color: #365ad8; /* Niebieski nagłówek */
+    background-color: #365ad8; 
     color: white;
-    padding: 60px 20px 20px 20px; /* Dodany większy padding od góry, dla notcha */
+    padding: 60px 20px 20px 20px; 
     width: 100%;
     margin-bottom: 30px;
 }
@@ -130,7 +130,7 @@ header {
 }
 
 footer {
-    background-color: #333;
+    background-color: #365ad8;
     color: white;
     text-align: center;
     padding: 10px;

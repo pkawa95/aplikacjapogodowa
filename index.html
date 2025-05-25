@@ -3,57 +3,49 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Walidacja formularza</title>
+    <title>Aplikacja pogodowa</title> 
     <link rel="stylesheet" href="style.css" />
-</head>
+</head>    
 <body>
     <header>
-        <h1>Formularz rejestracyjny</h1>
+        <h1>Aplikacja pogodowa</h1>
     </header>
 
     <main>
-        <form action="" class="form">
-            <div class="box">
-                <label for="username">Nazwa użytkownika:</label>
-                <input type="text" id="username" placeholder="Podaj nazwę użytkownika" />
-                <p class="error_message"></p>
-            </div>
+        <!-- Sekcja wyszukiwania -->
+        <section class="search">
+            <input type="text" placeholder="Podaj nazwę miasta" aria-label="Nazwa miasta" />
+            <button type="button">Sprawdź pogodę</button>
+            <p class="error_message"></p>
+        </section>
 
-            <div class="box">
-                <label for="email">Email:</label>
-                <input type="email" id="email" placeholder="Podaj adres email" />
-                <p class="error_message"></p>
+        <!-- Górna część z danymi pogodowymi -->
+        <section class="weather_top">
+            <p class="date"></p>
+            <h2 class="city_name"></h2>
+            <div class="weather_info">
+                <img src="" alt="Ikona pogody" class="weather_img" />
+                <span class="temp"></span>
             </div>
+            <p class="weather_description"></p>
+        </section>
 
-            <div class="box">
-                <label for="password1">Hasło:</label>
-                <input type="password" id="password1" placeholder="Podaj hasło" />
-                <p class="error_message"></p>
-            </div>
-
-            <div class="box">
-                <label for="password2">Powtórz hasło:</label>
-                <input type="password" id="password2" placeholder="Powtórz hasło" />
-                <p class="error_message"></p>
-            </div>
-
-            <div class="box checkbox">
-                <input type="checkbox" id="terms" />
-                <label for="terms">Akceptuję regulamin</label>
-                <p class="error_message"></p>
-            </div>
-
-            <div class="buttons">
-                <button type="reset" class="reset">Resetuj formularz</button>
-                <button type="submit" class="submit">Wyślij formularz</button>
-            </div>
-        </form>
+        <!-- Dolna część z dodatkowymi danymi pogodowymi -->
+        <section class="weather_bottom">
+            <p>Temperatura odczuwalna: <span class="feels_like"></span></p>
+            <p>Ciśnienie: <span class="pressure"></span></p>
+            <p>Wilgotność: <span class="humidity"></span></p>
+            <p>Prędkość wiatru: <span class="wind_speed"></span></p>
+            <p>Widoczność: <span class="visibility"></span></p>
+            <p>Zachmurzenie: <span class="clouds"></span></p>
+        </section>
     </main>
 
     <footer>
-        <p>Projekt WSB Merito Gdynia 2025</p>
+        <p>Projekt WSB Merito 2025 – Piotr Kawa 78228</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>

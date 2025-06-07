@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Aplikacja pogodowa</title> 
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#365ad8">
+</head>    
+
+<body>
+    <header>
+        <h1>Aplikacja pogodowa</h1>
+    </header>
+
+    <main>
+        <!-- Sekcja wyszukiwania -->
+        <section class="search">
+            <input type="text" placeholder="Podaj nazwę miasta" aria-label="Nazwa miasta" />
+            <button type="button">Sprawdź pogodę</button>
+            <p class="error_message"></p>
+        </section>
+
+        <!-- Górna część z danymi pogodowymi -->
+        <section class="weather_top">
+            <p class="date"></p>
+            <h2 class="city_name"></h2>
+            <div class="weather_info">
+                <img src="" alt="Ikona pogody" class="weather_img hidden" />
+                <span class="temp"></span>
+            </div>
+            <p class="weather_description"></p>
+        </section>
+
+        <!-- Dolna część z dodatkowymi danymi pogodowymi -->
+        <section class="weather_bottom">
+            <p>Temperatura odczuwalna: <span class="feels_like"></span></p>
+            <p>Ciśnienie: <span class="pressure"></span></p>
+            <p>Wilgotność: <span class="humidity"></span></p>
+            <p>Prędkość wiatru: <span class="wind_speed"></span></p>
+            <p>Widoczność: <span class="visibility"></span></p>
+            <p>Zachmurzenie: <span class="clouds"></span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projekt WSB Merito 2025 – Piotr Kawa 78228</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="./sw.js"></script>
+</body>
+</html>

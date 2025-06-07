@@ -160,3 +160,7 @@ footer p {
         width: auto;
     }
 }
+
+.hidden {
+    display: none;
+}

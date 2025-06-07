@@ -19,7 +19,7 @@ body {
 header {
     text-align: center;
     background-color: #365ad8; 
-    color: white;
+    color: rgb(80, 80, 80);
     padding: 60px 20px 20px 20px; 
     width: 100%;
     margin-bottom: 30px;
@@ -111,7 +111,7 @@ header {
 }
 
 .weather_bottom {
-    background-color: #fff;
+    background-color: #383838;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

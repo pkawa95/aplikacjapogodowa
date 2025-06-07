@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
             [date, cityName, temp, description, feelsLike, humidity, pressure, windSpeed, visibility, clouds].forEach(el => {
                 el.textContent = ' ';
             });
-            img.removeAttribute("src");   // <- to usuwa pusty obrazek z DOM
-            img.classList.add("hidden");  // <- i go chowa
+            img.removeAttribute("src");   
+            img.classList.add("hidden");  
         }).finally(() => {
             input.value = '';
         });
